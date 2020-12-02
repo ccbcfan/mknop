@@ -2,28 +2,13 @@ name: OpenWrt-CI
 
 on:
  
-#定时触发开始编译(开启定时编译请先确认SSH处在关闭状态,要不然SSH没人管,会卡SSH编译失败)
-#  schedule:
-#   - cron: '0 22 * * 5'
-
-workflow_dispatch:
- inputs:
-      ssh:
-        description: 'SSH远程'
-        required: false
-        default: 'ssh-actions'
-      wxtz:
-        description: '微信通知'
-        required: false
-        default: 'wxtz-actions'
-      release:
-        description: '发布固件'
-        required: false
-        default: 'release-actions'   
+  schedule:
+    - cron: '0 22 * * 5'
+  workflow_dispatch:
 
 watch:
     types: started  
-
+    workflow_dispatch:
 
 env:
   TZ: 'Asia/Shanghai'
