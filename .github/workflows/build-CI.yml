@@ -7,7 +7,19 @@ on:
 #   - cron: '0 22 * * 5'
 
 workflow_dispatch:
-   
+ inputs:
+      ssh:
+        description: 'SSH远程'
+        required: false
+        default: 'ssh-actions'
+      wxtz:
+        description: '微信通知'
+        required: false
+        default: 'wxtz-actions'
+      release:
+        description: '发布固件'
+        required: false
+        default: 'release-actions'   
 
 watch:
     types: started  
