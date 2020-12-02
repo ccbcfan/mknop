@@ -1,14 +1,15 @@
 name: OpenWrt-CI
 
 on:
+ workflow_dispatch:
  
   schedule:
     - cron: '0 22 * * 5'
-  workflow_dispatch:
+  
 
   watch:
     types: started  
-    workflow_dispatch:
+    
 
 env:
   TZ: 'Asia/Shanghai'
