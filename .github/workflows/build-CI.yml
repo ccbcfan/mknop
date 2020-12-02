@@ -56,7 +56,6 @@ jobs:
           cp lede/bin/targets/*/*/*.tar.gz ./openwrt
           sudo ./gen_openwrt -d -k latest
           
-#         devices=("phicomm-n1" "vplus" "beikeyun" "l1pro" "s905x3")
           devices=("phicomm-n1")
           cd out
           for x in ${devices[*]}; do
